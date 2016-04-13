@@ -1,0 +1,104 @@
+
+* {
+  padding:0; 
+  margin:0;
+}
+
+body {
+  background:#F5FAFD;
+}
+
+.loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #666;
+  opacity: 0.4;
+  filter: alpha(opacity=40);  
+  top: 0;  
+  left: 0;  
+  z-index: 2000;
+  padding-top:50px;
+  text-align: center;
+}
+
+.container {
+  text-align: center;
+  padding: 50px;
+}
+
+/*ie fixed 的兼容性问题*/
+.ie{   
+  _position: absolute;  
+  _clear: both;   
+  _top:expression(eval(document.compatMode &&   
+    document.compatMode=='CSS1Compat') ?   
+    documentElement.scrollTop   
+      +(documentElement.clientHeight-this.clientHeight) - 1   
+    : document.body.scrollTop   
+      +(document.body.clientHeight-this.clientHeight) - 1); 
+}
+
+/* jquery loading */
+
+.jq-loading {
+  height:15px; 
+  width: 471px; 
+  position: relative; 
+  padding: 0 30px; 
+  margin: 0 auto;
+  display: none;
+}
+
+.jq-loading .line {
+  position:absolute; 
+  left:50px; 
+  top:0;
+}
+
+/*CSS3 Loading*/
+
+.css-loading {
+  margin: 100px auto 0;
+  width: 150px;
+  display: none;
+}
+ 
+.css-loading > div {
+  width: 30px;
+  height: 30px;
+  background-color: #67CF22;
+ 
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+ 
+.css-loading .dot1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+ 
+.css-loading .dot2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+ 
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+ 
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
